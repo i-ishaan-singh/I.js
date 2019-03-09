@@ -56,6 +56,70 @@ Object.defineStateProperty(obj[, prop], descriptor);
 > Bonjour
 ```
 
+### Each
+
+This Ijs API of Object Extension iterates through **own** properties of the object and executes the callback. 
+
+#### Syntax:
+```javascript
+Object.each(obj , callback [, thisParam]);
+```
+
+
+##### Parameters
+ + **obj** The object on which to iterate.
+ + **callback** Tje function to be called.
+ + **thisParam** The object which is to be sent as this to the callback. Default - the object sent.
+ 
+##### Javascript Example:
+```javascript
+
+	var obj={firstName: 'Ishaan', lastName: 'Singh'}
+
+	Object.each(obj,function(key, value){
+		console.log('Key : '+key+'\t value : '+value);
+	});
+
+```
+##### Output(After 1 second):
+```
+	> Key : firstName	 value : Ishaan
+	> Key : lastName	 value : Singh
+```
+
+### All
+
+This Ijs API of Object Extension iterates through **all** properties of the object and executes the callback. 
+
+#### Syntax:
+```javascript
+Object.all(obj , callback [, thisParam]);
+```
+
+
+##### Parameters
+ + **obj** The object on which to iterate.
+ + **callback** Tje function to be called.
+ + **thisParam** The object which is to be sent as this to the callback. Default - the object sent.
+ 
+##### Javascript Example:
+```javascript
+
+	var obj={firstName: 'Ishaan', lastName: 'Singh'}
+
+	Object.all(obj,function(key, value){
+		console.log('Key : '+key+'\t value : '+value);
+	});
+
+```
+##### Output(After 1 second):
+```
+	> Key : firstName	 value : Ishaan
+	> Key : lastName	 value : Singh
+```
+
+
+
 ## Array Extensions
 
 ### Swap
