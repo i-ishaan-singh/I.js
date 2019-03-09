@@ -49,7 +49,28 @@
 
 	}
 
-
+		//Each API
+	Object.each=function(object,callback, thisParam){
+		var _keys=Object.keys(object),
+			_length=_keys.length;
+			thisParam=(thisParam||object);
+		for(var i=0;i<_length;++i){
+			if(object.hasOwnProperty(_keys[i])){
+				callback.call(thisParam,_keys[i],object[_keys[i]]);
+			}
+		}
+	};
+	
+		//All API
+	Object.all=function(object,callback,thisParam){
+		var _keys=Object.keys(object),
+			_length=_keys.length;
+			thisParam=(thisParam||object);
+		for(var i=0;i<_length;++i){
+			callback.call(thisParam,_keys[i],object[_keys[i]]);
+		}
+	};
+	
 	/****************** END : Object Extensions ****************************/
 	
 	
