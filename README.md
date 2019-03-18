@@ -155,13 +155,13 @@ This Ijs API of Array Extension swaps values at two indexes inside the array on 
 ```
 
 
-### Randomize
+### Shuffle
 
-This Ijs API of Array Extension randomizes the values inside the array on which it is called. 
+This Ijs API of Array Extension shuffles the values inside the array on which it is called. 
 
 #### Syntax:
 ```javascript
-[Array].randomize();
+[Array].shuffle();
 ```
  
 ##### Javascript Example:
@@ -169,13 +169,13 @@ This Ijs API of Array Extension randomizes the values inside the array on which 
 
 	var arr=[0,1,2,3,4,5,6,7,8]
 
-	arr.randomize();
+	arr.shuffle();
 	> (9) [4, 0, 8, 6, 7, 2, 5, 3, 1]
 	
 	arr
 	> (9) [4, 0, 8, 6, 7, 2, 5, 3, 1]
 	
-	arr.randomize();
+	arr.shuffle();
 	> (9) [1, 8, 4, 0, 5, 3, 2, 6, 7]
 	
 	arr

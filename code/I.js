@@ -78,27 +78,39 @@
 	
 	
 	
-	Array.prototype.swap=function(indexI, indexJ, preserveOriginal){
-		var _arr=preserveOriginal?Array.prototype.slice.call(this):this,
-			temp=_arr[indexI];
-		
-		_arr[indexI]=_arr[indexJ];
-		_arr[indexJ]=temp;
-		
-		return _arr;
-	}
+	Object.defineProperty(Array.prototype,'swap',{
+		value: function(indexI, indexJ, preserveOriginal){
+				var _arr=preserveOriginal?Array.prototype.slice.call(this):this,
+					temp=_arr[indexI];
+				
+				_arr[indexI]=_arr[indexJ];
+				_arr[indexJ]=temp;
+				
+				return _arr;
+			},
+		enumerable: false,
+		configurable: false,
+		writable: false,
+	});
 	
 	
-	Array.prototype.randomize=function(){
-		var temp,r;
-		for(var i=this.length-1;i>=0;--i){
-			r=Math.floor(Math.random()*i);
-			temp=this[i];
-			this[i]=this[r];
-			this[r]=temp;
-		}
-		return this;
-	}
+	Object.defineProperty(Array.prototype,'shuffle',{
+		value: function(){
+			var temp,r;
+			for(var i=this.length-1;i>=0;--i){
+				r=Math.floor(Math.random()*i);
+				temp=this[i];
+				this[i]=this[r];
+				this[r]=temp;
+			}
+			return this;
+		},
+		enumerable: false,
+		configurable: false,
+		writable: false,
+	});
+	
+	Array.prototype.randomize=
 	
 	/****************** END : Array Extensions ****************************/
 	
